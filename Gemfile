@@ -67,5 +67,7 @@ group :development do
 
   gem 'foreman'
   gem 'pry-rails'
+  gem 'haml-rails'
+  gem 'erb2haml'
 end
 
