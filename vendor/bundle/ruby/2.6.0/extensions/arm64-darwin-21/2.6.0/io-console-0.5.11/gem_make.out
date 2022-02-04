@@ -1,0 +1,20 @@
+current directory: /Users/yukke/Projects/shokichi_bd_bot/vendor/bundle/ruby/2.6.0/gems/io-console-0.5.11/ext/io/console
+/Users/yukke/.rbenv/versions/2.6.8/bin/ruby -I /Users/yukke/.rbenv/versions/2.6.8/lib/ruby/2.6.0 -r ./siteconf20220205-28264-5yupeg.rb extconf.rb
+checking for termios.h... yes
+checking for cfmakeraw() in termios.h... yes
+checking for sys/ioctl.h... yes
+checking for HAVE_RUBY_FIBER_SCHEDULER_H... no
+checking for rb_scheduler_timeout()... no
+creating Makefile
+
+current directory: /Users/yukke/Projects/shokichi_bd_bot/vendor/bundle/ruby/2.6.0/gems/io-console-0.5.11/ext/io/console
+make "DESTDIR=" clean
+
+current directory: /Users/yukke/Projects/shokichi_bd_bot/vendor/bundle/ruby/2.6.0/gems/io-console-0.5.11/ext/io/console
+make "DESTDIR="
+compiling console.c
+linking shared-object io/console.bundle
+
+current directory: /Users/yukke/Projects/shokichi_bd_bot/vendor/bundle/ruby/2.6.0/gems/io-console-0.5.11/ext/io/console
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 console.bundle ./.gem.20220205-28264-10vks3t/io
