@@ -70,5 +70,6 @@ group :development do
   gem 'pry-rails'
   gem 'haml-rails'
   gem 'erb2haml'
+  gem 'annotate'
 end
 
