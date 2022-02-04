@@ -3,31 +3,43 @@
   %div{class: 'm-auto w-2/3'}
     %h1{class: 'text-lg py-2'} 主語
     %div{class: 'flex flex-wrap justify-center border-t border-color-gray py-4'}
-      - if @prefixes.present?
-        - prefixes.each do |prefix|
+      - if @subjects.present?
+        - @subjects.each do |subject|
           %div{class:'w-1/6 text-center mt-2 ml-2 p-2 border rounded-md'}
-            #{prefix}
+            #{subject.name}
       - else
         naiyo
+    %div{class: 'w-full text-center mt-10'}
+      = form_with model: @subject, url: subjects_path do |f|
+        = f.text_field :name, placeholder: '主語を入れてね', class: 'border border-gray-200 rounded-md p-2 text-sm'
+        = f.submit '保存', class: 'p-2 text-sm rounded-md ml-2 cursor-pointer bg-blue-100'
 
   -# 接続詞
   %div{class: 'm-auto w-2/3 mt-8'}
     %h1{class: 'text-lg py-2'} 接続詞
     %div{class: 'flex flex-wrap justify-center border-t border-color-gray py-4'}
       - if @conjunctions.present?
-        - conjunctions.each do |conjunction|
+        - @conjunctions.each do |conjunction|
           %div{class:'w-1/6 text-center mt-2 ml-2 p-2 border rounded-md'}
-            #{conjunction}
+            #{conjunction.name}
       - else
         naiyo
+    %div{class: 'w-full text-center mt-10'}
+      = form_with model: @conjunction, url: conjunctions_path do |f|
+        = f.text_field :name, placeholder: '接続詞を入れてね', class: 'border border-gray-200 rounded-md p-2 text-sm'
+        = f.submit '保存', class: 'p-2 text-sm rounded-md ml-2 cursor-pointer bg-blue-100'
 
   -# 述語
   %div{class: 'm-auto w-2/3 mt-8'}
     %h1{class: 'text-lg py-2'} 述語
     %div{class: 'flex flex-wrap justify-center border-t border-color-gray py-4'}
       - if @predicates.present?
-        - predicates.each do |predicate|
+        - @predicates.each do |predicate|
           %div{class:'w-1/6 text-center mt-2 ml-2 p-2 border rounded-md'}
-            #{predicate}
+            #{predicate.name}
       - else
         naiyo
+    %div{class: 'w-full text-center mt-10'}
+      = form_with model: @predicate, url: predicates_path do |f|
+        = f.text_field :name, placeholder: '述語を入れてね', class: 'border border-gray-200 rounded-md p-2 text-sm'
+        = f.submit '保存', class: 'p-2 text-sm rounded-md ml-2 cursor-pointer bg-blue-100'
