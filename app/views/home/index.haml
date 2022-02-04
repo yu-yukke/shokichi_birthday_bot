@@ -1,0 +1,33 @@
+%div{class: 'w-full py-6'}
+  -# 主語
+  %div{class: 'm-auto w-2/3'}
+    %h1{class: 'text-lg py-2'} 主語
+    %div{class: 'flex flex-wrap justify-center border-t border-color-gray py-4'}
+      - if @prefixes.present?
+        - prefixes.each do |prefix|
+          %div{class:'w-1/6 text-center mt-2 ml-2 p-2 border rounded-md'}
+            #{prefix}
+      - else
+        naiyo
+
+  -# 接続詞
+  %div{class: 'm-auto w-2/3 mt-8'}
+    %h1{class: 'text-lg py-2'} 接続詞
+    %div{class: 'flex flex-wrap justify-center border-t border-color-gray py-4'}
+      - if @conjunctions.present?
+        - conjunctions.each do |conjunction|
+          %div{class:'w-1/6 text-center mt-2 ml-2 p-2 border rounded-md'}
+            #{conjunction}
+      - else
+        naiyo
+
+  -# 述語
+  %div{class: 'm-auto w-2/3 mt-8'}
+    %h1{class: 'text-lg py-2'} 述語
+    %div{class: 'flex flex-wrap justify-center border-t border-color-gray py-4'}
+      - if @predicates.present?
+        - predicates.each do |predicate|
+          %div{class:'w-1/6 text-center mt-2 ml-2 p-2 border rounded-md'}
+            #{predicate}
+      - else
+        naiyo
