@@ -1,4 +1,8 @@
 {
+  "name": "shokichi_bd_bot",
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "@rails/ujs": "^7.0.1",
     "@rails/webpacker": "5.4.3",
