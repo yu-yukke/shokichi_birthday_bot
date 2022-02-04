@@ -16,8 +16,5 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^3"
-  },
-  "scripts": {
-    "heroku-postbuild": "npm run prod"
   }
 }
