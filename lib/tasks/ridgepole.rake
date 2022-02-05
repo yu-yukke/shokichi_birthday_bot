@@ -11,15 +11,7 @@ namespace :ridgepole do
 
   private
   def config_file
-    if Rails.env.development?
-      'config/database.yml'
-    elsif Rails.env.staging?
-      'config/database.staging.yml'
-    elsif Rails.env.production?
-      'config/database.production.yml'
-    else
-      raise 'no configuration specified'
-    end
+    'config/database.yml'
   end
 
   def ridgepole(*options)
