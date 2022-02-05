@@ -1,5 +1,7 @@
+index_key  = 'index_conjunctions_on_'
+
 create_table "conjunctions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPRESSED", force: :cascade do |t|
-  t.index ["name"], name: "index_cons_on_name"
+  t.index ["name"], name: "#{index_key}name"
   t.string "name"
   t.datetime "created_at", null: false
   t.datetime "updated_at", null: false

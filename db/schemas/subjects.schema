@@ -1,5 +1,7 @@
+index_key = 'index_subjects_on_'
+
 create_table "subjects", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPRESSED", force: :cascade do |t|
-  t.index ["name"], name: "index_subs_on_name"
+  t.index ["name"], name: "#{index_key}name"
   t.string "name"
   t.datetime "created_at", null: false
   t.datetime "updated_at", null: false
