@@ -50,6 +50,8 @@ test:
 #
 production:
   <<: *default
-  database: shokichi_bd_bot_production
-  username: shokichi_bd_bot
-  password: <%= ENV["SHOKICHI_BD_BOT_DATABASE_PASSWORD"] %>
+  database: <%= ENV['DB_NAME'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
