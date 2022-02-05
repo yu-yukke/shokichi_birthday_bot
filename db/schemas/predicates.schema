@@ -1,4 +1,4 @@
-index_key = 'i_preds_'
+index_key = 'index_predicates_on_'
 
 create_table "predicates", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPRESSED", force: :cascade do |t|
   t.index ["name"], name: "#{index_key}name"
