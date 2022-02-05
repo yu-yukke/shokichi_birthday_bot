@@ -1,4 +1,4 @@
-index_key = 'i_subs_on_'
+index_key = 'i_subs_'
 
 create_table "subjects", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPRESSED", force: :cascade do |t|
   t.index ["name"], name: "#{index_key}name"

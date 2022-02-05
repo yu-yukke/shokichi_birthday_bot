@@ -50,6 +50,7 @@ gem "bootsnap", require: false
 
 gem 'ridgepole'
 gem 'webpacker'
+gem 'haml-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -68,7 +69,6 @@ group :development do
 
   gem 'foreman'
   gem 'pry-rails'
-  gem 'haml-rails'
   gem 'erb2haml'
   gem 'annotate'
 end
