@@ -51,6 +51,7 @@ gem "bootsnap", require: false
 gem 'ridgepole'
 gem 'webpacker'
 gem 'haml-rails'
+gem 'discordrb'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
