@@ -36,7 +36,7 @@ namespace :discordbot do
       fields: [
         {
           name: '誕生日まで...',
-          value: "残り #{remaining_count}日",
+          value: remaining_count,
         },
         {
           name: '今日の一言',
@@ -59,8 +59,9 @@ namespace :discordbot do
     year = now.year
     birthday = Date.new(year, Constants::Birthday::MONTH, Constants::Birthday::DAY)
     birthday += 1.year if now > birthday
+    count = (birthday - now).to_i
 
-    (birthday - now).to_i
+    count == 0 ? '誕生日おめでとう！！' : "残り #{count}日"
   end
 
   def create_comment
