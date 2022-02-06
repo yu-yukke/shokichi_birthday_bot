@@ -1,4 +1,6 @@
 module Constants
+  URL = 'https://shokichi-bd-app.herokuapp.com/'
+
   class Birthday
     MONTH = 2
     DAY = 24

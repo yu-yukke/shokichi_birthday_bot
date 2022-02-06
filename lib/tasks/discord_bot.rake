@@ -5,19 +5,53 @@ namespace :discordbot do
   task run: :environment do
     bot = Discordrb::Bot.new token: ENV['TOKEN']
 
-    message = create_message
-    bot.send_message(ENV['CHANNEL_ID'], message)
+    embed = create_embed
+    bot.send_message(ENV['CHANNEL_ID'], '', false, embed)
   end
 
   private
 
-  def create_message
+  def create_embed
     remaining_count = calc_remaining_count
     comment = create_comment
     fortune = Constants::Fortune::FORTUNES.shuffle.first
     weather = get_weather
 
-    get_weather
+    {
+      title: 'Shokichi Birthday Countdown',
+      color: 653805,
+      timestamp: Time.zone.now,
+      footer: {
+        icon_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
+        text: 'Shokichi Birthday Countdown'
+      },
+      thumbnail: {
+        url: 'https://cdn.discordapp.com/embed/avatars/0.png'
+      },
+      author: {
+        name: 'Shokichi Birthday Countdown Bot',
+        url: Constants::URL,
+        icon_url: 'https://cdn.discordapp.com/embed/avatars/0.png'
+      },
+      fields: [
+        {
+          name: '誕生日まで...',
+          value: "残り #{remaining_count}日",
+        },
+        {
+          name: '今日の一言',
+          value: comment
+        },
+        {
+          name: '今日の運勢',
+          value: fortune
+        },
+        {
+          name: '目黒区の天気',
+          value: weather
+        }
+      ]
+    }
   end
 
   def calc_remaining_count
