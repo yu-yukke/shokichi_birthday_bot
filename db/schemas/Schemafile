@@ -1,3 +1,4 @@
 require 'subjects.schema'
 require 'predicates.schema'
 require 'conjunctions.schema'
+require 'infected_people.schema'
