@@ -52,6 +52,8 @@ gem 'ridgepole'
 gem 'webpacker'
 gem 'haml-rails'
 gem 'discordrb'
+gem 'dotenv-rails'
+gem 'mechanize'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
