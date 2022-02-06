@@ -69,7 +69,7 @@ namespace :discordbot do
     conjunction = Conjunction.all.shuffle.pick(:name)
     predicate = Predicate.all.shuffle.pick(:name)
 
-    subject + conjunction + predicate
+    'しょうきちくんの' + subject + conjunction + predicate
   end
 
   def get_weather
