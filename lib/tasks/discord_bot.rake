@@ -47,7 +47,7 @@ namespace :discordbot do
           value: fortune
         },
         {
-          name: '目黒区の天気',
+          name: '今日の目黒区の天気',
           value: weather
         }
       ]
