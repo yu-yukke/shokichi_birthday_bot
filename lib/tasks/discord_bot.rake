@@ -19,19 +19,19 @@ namespace :discordbot do
 
     {
       title: 'Shokichi Birthday Countdown',
+      url: Constants::URL,
       color: 653805,
       timestamp: Time.zone.now,
       footer: {
-        icon_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
+        icon_url: Constants::ICON_URL,
         text: 'Shokichi Birthday Countdown'
       },
       thumbnail: {
-        url: 'https://cdn.discordapp.com/embed/avatars/0.png'
+        url: Constants::ICON_URL
       },
       author: {
         name: 'Shokichi Birthday Countdown Bot',
-        url: Constants::URL,
-        icon_url: 'https://cdn.discordapp.com/embed/avatars/0.png'
+        icon_url: Constants::ICON_URL
       },
       fields: [
         {
@@ -61,7 +61,7 @@ namespace :discordbot do
     birthday += 1.year if now > birthday
     count = (birthday - now).to_i
 
-    count == 0 ? '誕生日おめでとう！！' : "残り #{count}日"
+    count == 0 ? ':tada: 誕生日おめでとう！！ :tada:' : "残り #{count}日"
   end
 
   def create_comment
