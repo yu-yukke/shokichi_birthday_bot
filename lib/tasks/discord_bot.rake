@@ -14,7 +14,7 @@ namespace :discordbot do
   def create_embed
     remaining_count = calc_remaining_count
     comment = create_comment
-    fortune = Constants::Fortune::FORTUNES.shuffle.first
+    fortune = rand(365) == 1 ? '矢沢永吉（SSR)' : Constants::Fortune::FORTUNES.shuffle.first
     weather = get_weather
 
     {
