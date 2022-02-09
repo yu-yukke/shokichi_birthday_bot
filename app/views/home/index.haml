@@ -5,8 +5,11 @@
     %div{class: 'flex flex-wrap justify-center border-t border-color-gray py-4'}
       - if @subjects.present?
         - @subjects.each do |subject|
-          %div{class:'w-1/6 text-center mt-2 ml-2 p-2 border rounded-md'}
-            #{subject.name}
+          %div{class:'w-1/6 text-center mt-2 ml-2 p-2 border rounded-md relative'}
+            %span #{subject.name}
+            %a(href="#{subject_path(subject)}" data-method='delete' data-confirm="「#{subject.name}」 消しておｋ？"){
+              class: 'absolute right-4 text-red-500'
+            } 削
       - else
         naiyo
     %div{class: 'w-full text-center mt-10'}
@@ -20,8 +23,11 @@
     %div{class: 'flex flex-wrap justify-center border-t border-color-gray py-4'}
       - if @conjunctions.present?
         - @conjunctions.each do |conjunction|
-          %div{class:'w-1/6 text-center mt-2 ml-2 p-2 border rounded-md'}
-            #{conjunction.name}
+          %div{class:'w-1/6 text-center mt-2 ml-2 p-2 border rounded-md relative'}
+            %span #{conjunction.name}
+            %a(href="#{conjunction_path(conjunction)}" data-method='delete' data-confirm="「#{conjunction.name}」 消しておｋ？"){
+              class: 'absolute right-4 text-red-500'
+            } 削
       - else
         naiyo
     %div{class: 'w-full text-center mt-10'}
@@ -35,8 +41,11 @@
     %div{class: 'flex flex-wrap justify-center border-t border-color-gray py-4'}
       - if @predicates.present?
         - @predicates.each do |predicate|
-          %div{class:'w-1/6 text-center mt-2 ml-2 p-2 border rounded-md'}
-            #{predicate.name}
+          %div{class:'w-1/6 text-center mt-2 ml-2 p-2 border rounded-md relative'}
+            %span #{predicate.name}
+            %a(href="#{predicate_path(predicate)}" data-method='delete' data-confirm="「#{predicate.name}」 消しておｋ？"){
+              class: 'absolute right-4 text-red-500'
+            } 削
       - else
         naiyo
     %div{class: 'w-full text-center mt-10'}

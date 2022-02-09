@@ -6,6 +6,13 @@ class PredicatesController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+  def destroy
+    @predicate = Predicate.find_by id: params[:id]
+
+    @predicate.destroy
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def predicate_params
