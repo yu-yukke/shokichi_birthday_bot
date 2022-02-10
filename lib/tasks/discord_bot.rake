@@ -49,6 +49,10 @@ namespace :discordbot do
         {
           name: '今日の目黒区の天気',
           value: weather
+        },
+        {
+          name: '今日の聖教新聞ヘッドニュース',
+          value: get_headnews
         }
       ]
     }
@@ -87,5 +91,14 @@ namespace :discordbot do
     fortune = rand(365) == 1 ? '矢沢永吉（SSR)' : Constants::Fortune::FORTUNES.shuffle.first
 
     fortune + element&.inner_text&.sub(/\n/, "")
+  end
+
+  def get_headnews
+    agent = Mechanize.new
+    page = agent.get(Constants::Souka::NEWS_URL)
+    text = page.at('.topMainImage h2')&.inner_text
+    url = 'https:' + page.at('.topMainImage a')&.attributes['href']&.value
+
+    "[#{text}](#{url})"
   end
 end

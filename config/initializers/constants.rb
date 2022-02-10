@@ -2,6 +2,10 @@ module Constants
   URL = 'https://shokichi-bd-app.herokuapp.com/'
   ICON_URL = 'https://1.bp.blogspot.com/-dwGDwxboFFo/WR_K3MHEKLI/AAAAAAABEao/XJW3qQHiG4cfqh8WDfvNP1QJYc2KKJjQQCLcB/s800/party_birthdaycake_kao_tsukkomu.png'
 
+  class Souka
+    NEWS_URL = 'https://www.seikyoonline.com/'
+  end
+
   class Birthday
     MONTH = 2
     DAY = 24
