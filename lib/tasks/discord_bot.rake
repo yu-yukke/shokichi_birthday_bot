@@ -14,7 +14,7 @@ namespace :discordbot do
   def create_embed
     remaining_count = calc_remaining_count
     comment = create_comment
-    fortune = rand(365) == 1 ? '矢沢永吉（SSR)' : Constants::Fortune::FORTUNES.shuffle.first
+    fortune = create_fortune
     weather = get_weather
 
     {
@@ -77,6 +77,15 @@ namespace :discordbot do
     page = agent.get(Constants::Meguro::WEATHER_URL)
     element = page.at('.today-weather .weather-telop')
 
-    element.inner_text
+    element&.inner_text
+  end
+
+  def create_fortune
+    agent = Mechanize.new
+    page = agent.get(Constants::Fortune::FORTUNE_URL)
+    element = page.at('.bg01-03 .mg10b .yftn12a-md48')
+    fortune = rand(365) == 1 ? '矢沢永吉（SSR)' : Constants::Fortune::FORTUNES.shuffle.first
+
+    fortune + element&.inner_text&.sub(/\n/, "")
   end
 end

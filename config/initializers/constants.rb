@@ -8,6 +8,7 @@ module Constants
   end
 
   class Fortune
+    FORTUNE_URL = 'https://fortune.yahoo.co.jp/12astro/pisces'
     FORTUNES = [
       '大吉','大吉',
       '吉','吉','吉','吉','吉','吉',
