@@ -35,23 +35,23 @@ namespace :discordbot do
       },
       fields: [
         {
-          name: '誕生日まで...',
+          name: '[誕生日まで...]',
           value: remaining_count,
         },
         {
-          name: '今日の一言',
+          name: '[今日の一言]',
           value: comment
         },
         {
-          name: '今日の運勢',
+          name: '[今日の運勢]',
           value: fortune
         },
         {
-          name: '今日の目黒区の天気',
+          name: '[今日の目黒区の天気]',
           value: weather
         },
         {
-          name: '今日の聖教新聞ヘッドニュース',
+          name: '[今日の聖教新聞ヘッドニュース]',
           value: get_headnews
         }
       ]
@@ -90,7 +90,7 @@ namespace :discordbot do
     element = page.at('.bg01-03 .mg10b .yftn12a-md48')
     fortune = rand(365) == 1 ? '矢沢永吉（SSR)' : Constants::Fortune::FORTUNES.shuffle.first
 
-    fortune + element&.inner_text&.sub(/\n/, "")
+    fortune + "\n\n" + element&.inner_text&.gsub(/\n/, "")&.gsub(" ", "")
   end
 
   def get_headnews
